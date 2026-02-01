@@ -1,0 +1,43 @@
+<div style="padding: 20px;">
+  <h2></h2>
+
+  <!-- Loading -->
+  <div *ngIf="loading" style="margin-top: 15px;">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <!-- Error -->
+  <p *ngIf="!loading && error" style="color:red; margin-top: 15px;">
+    {{ error }}
+  </p>
+
+  <!-- Empty -->
+  <p *ngIf="!loading && !error && products.length === 0" style="margin-top: 15px;">
+    No approved products found.
+  </p>
+
+  <!-- List -->
+  <div *ngIf="!loading && products.length > 0"
+       style="display:flex; flex-wrap:wrap; gap:16px; margin-top: 15px;">
+
+<mat-card *ngFor="let p of products"
+          style="width:260px; cursor:pointer;"
+          (click)="openDetails($event, p)">
+
+      <img *ngIf="p.imageUrl"
+           [src]="p.imageUrl"
+           style="width:100%; height:160px; object-fit:cover;">
+
+      <mat-card-title>{{ p.name }}</mat-card-title>
+      <mat-card-subtitle>{{ p.brand }}</mat-card-subtitle>
+
+      <mat-card-content>
+        <p><b>Calories:</b> {{ p.calories ?? 'N/A' }}</p>
+        <p><b>Estimated Price:</b> {{ p.price ?? 'N/A' }}</p>
+        <p><b>Category:</b> {{ p.categoryName ?? 'N/A' }}</p>
+      </mat-card-content>
+
+    </mat-card>
+
+  </div>
+</div>

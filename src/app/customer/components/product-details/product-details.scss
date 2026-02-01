@@ -1,0 +1,127 @@
+:host {
+  display: block;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+/* Root div in your HTML */
+:host > div {
+  max-width: 980px;
+  margin: 28px auto 60px auto;
+  padding: 28px !important;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+/* Make the product section look like a card (the inner div is: <div *ngIf="product">) */
+:host > div > div {
+  background: #ffffff;
+  border: 1px solid #e8eaee;
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 10px 28px rgba(16, 24, 40, 0.08);
+}
+
+/* Center the title and make it more premium */
+h2 {
+  margin: 0 0 18px 0;
+  font-size: 30px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.4px;
+  text-align: center;
+}
+
+/* Image: centered, nicer border, consistent size */
+img {
+  display: block;
+  margin: 0 auto 18px auto;
+  width: 220px;
+  max-width: 100%;
+  border-radius: 14px !important;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Info lines: turn them into neat rows */
+p {
+  margin: 10px 0;
+  font-size: 15.5px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+p b {
+  color: #0f172a;
+}
+
+/* Make the 3 info lines look like a compact grid */
+:host > div > div > p {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+}
+
+/* Section title */
+h3 {
+  margin: 22px 0 10px 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Nutrients block: nicer “code” style */
+pre {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #0b1220 !important;
+  color: #e5e7eb;
+  font-size: 13.5px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* Spinner centered and spaced */
+mat-spinner {
+  margin: 70px auto 0 auto;
+  display: block;
+}
+
+/* Error message becomes a nice alert box */
+p[style*="color:red"] {
+  margin-top: 16px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: #be123c !important;
+  font-weight: 700;
+}
+
+/* Responsive: reduce padding on small screens */
+@media (max-width: 600px) {
+  :host > div {
+    padding: 16px !important;
+    margin-top: 16px;
+  }
+
+  :host > div > div {
+    padding: 18px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  :host > div > div > p {
+    grid-template-columns: 120px 1fr;
+  }
+}

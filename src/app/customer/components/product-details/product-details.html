@@ -1,0 +1,24 @@
+<div style="padding: 20px;">
+
+<mat-spinner *ngIf="loading && !product"></mat-spinner>
+  <p *ngIf="error" style="color:red">{{ error }}</p>
+
+  <div *ngIf="product">
+
+    <h2>{{ product.name }}</h2>
+
+    <img *ngIf="product.imageUrl" [src]="product.imageUrl" width="180" style="border-radius:10px;">
+
+    <p><b>Brand:</b> {{ product.brand }}</p>
+    <p><b>Calories:</b> {{ product.calories }}</p>
+    <p><b>Estimated Price:</b> {{ formatPrice(product.price) }}</p>
+
+
+    <h3>Nutrients</h3>
+    <pre style="background:#f5f5f5; padding:12px; border-radius:10px; overflow:auto;">
+{{ getNutrientsText() }}
+    </pre>
+
+  </div>
+
+</div>

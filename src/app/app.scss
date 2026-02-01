@@ -1,0 +1,32 @@
+/* To handle the layout and background of the navigation bar */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  background-color: #388E3C;
+  /* This ensures the mat-toolbar fills the space correctly */
+}
+
+/* To style the "E-Commerce" title */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  color:white;
+}
+
+/* To push the buttons to the right side of the bar */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Optional: Styling for the buttons to look better on the navbar */
+button[mat-button] {
+  margin-left: 10px;
+    color: white;
+    
+}
+
+button.active {
+  background-color: rgba(18, 0, 0, 0.2);
+}

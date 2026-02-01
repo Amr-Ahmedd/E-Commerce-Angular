@@ -1,0 +1,20 @@
+/* Green buttons */
+.btn-green.mat-mdc-raised-button {
+  background-color: #388E3C !important;
+  color: #fff !important;
+}
+
+/* Red delete button */
+.btn-red.mat-mdc-raised-button {
+  background-color: #d32f2f !important; /* material red */
+  color: #fff !important;
+}
+
+/* Optional hover */
+.btn-green.mat-mdc-raised-button:hover {
+  filter: brightness(0.95);
+}
+
+.btn-red.mat-mdc-raised-button:hover {
+  filter: brightness(0.95);
+}
